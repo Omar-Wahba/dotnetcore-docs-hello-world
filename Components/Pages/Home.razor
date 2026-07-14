@@ -1,7 +1,61 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
-<PageTitle>Home</PageTitle>
+<PageTitle>For Manona ❤️</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="romance-page">
 
-Welcome to your new app.
+    <div class="hearts" aria-hidden="true">
+        @for (int i = 0; i < heartCount; i++)
+        {
+            <span class="heart heart-@(i % 8)">❤</span>
+        }
+    </div>
+
+    <main class="romance-card fade-in">
+        <p class="eyebrow">A little something for you</p>
+
+        <h1 class="main-message">
+            Love you <span class="name">Manona</span> <span class="emoji-heart">❤️</span>
+        </h1>
+
+        <p class="quote">
+            &ldquo;In a sea of people, my eyes will always search for you.&rdquo;
+        </p>
+
+        <div class="divider"><span>♡</span></div>
+
+        @if (!isRevealed)
+        {
+            <button class="reveal-btn" @onclick="Reveal">
+                Tap for a secret message
+            </button>
+        }
+        else
+        {
+            <div class="secret-message fade-in">
+                <p>
+                    Every day with you feels like a page from my favorite story —
+                    warm, gentle, and exactly where I want to be. Thank you for
+                    being you. Here's to us, always. 💕
+                </p>
+                <span class="signature">— forever yours</span>
+            </div>
+        }
+
+        <div class="footer-hearts" aria-hidden="true">
+            <span>❤</span><span>❤</span><span>❤</span>
+        </div>
+    </main>
+
+</div>
+
+@code {
+    private bool isRevealed = false;
+    private const int heartCount = 18;
+
+    private void Reveal()
+    {
+        isRevealed = true;
+    }
+}
