@@ -42,7 +42,18 @@
                 <span class="signature">— forever yours</span>
             </div>
         }
-
+        @if (!isProposalRevealed)
+{
+    <button class="reveal-btn reveal-btn-secondary" @onclick="RevealProposal">
+        One more secret 💍
+    </button>
+}
+else
+{
+    <div class="proposal-message fade-in">
+        <p>You will be my Wife one day Inshaallah! <span class="proposal-heart">❤️</span></p>
+    </div>
+}
         <div class="footer-hearts" aria-hidden="true">
             <span>❤</span><span>❤</span><span>❤</span>
         </div>
@@ -52,10 +63,17 @@
 
 @code {
     private bool isRevealed = false;
+    private bool isProposalRevealed = false;
     private const int heartCount = 18;
 
     private void Reveal()
     {
         isRevealed = true;
     }
+
+    private void RevealProposal()
+    {
+        isProposalRevealed = true;
+    }
+}
 }
