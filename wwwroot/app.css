@@ -248,4 +248,26 @@ h1:focus {
     .heart, .emoji-heart, .footer-hearts span, .romance-card, .fade-in {
         animation: none !important;
     }
+    .reveal-btn-secondary {
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #f6b7cf, #e0558d);
+}
+
+.proposal-message {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #7a2e4d;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.proposal-heart {
+    display: inline-block;
+    animation: heartbeat 1.4s ease-in-out infinite;
+}
 }
